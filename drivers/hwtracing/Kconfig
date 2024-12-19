@@ -1,0 +1,12 @@
+menu "HW tracing support"
+
+source "drivers/hwtracing/stm/Kconfig"
+
+source "drivers/hwtracing/intel_th/Kconfig"
+
+<<<<<<< HEAD
+=======
+source "drivers/hwtracing/google/Kconfig"
+
+>>>>>>> 122d1576a6713c615b6766b155a48c3edfd2f533
+endmenu

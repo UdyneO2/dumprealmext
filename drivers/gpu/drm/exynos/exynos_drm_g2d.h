@@ -1,0 +1,55 @@
+/*
+ * Copyright (C) 2012 Samsung Electronics Co.Ltd
+ * Authors: Joonyoung Shim <jy0922.shim@samsung.com>
+ *
+ * This program is free software; you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License version 2 as
+ * published by the Free Software Foundationr
+ */
+
+#ifdef CONFIG_DRM_EXYNOS_G2D
+extern int exynos_g2d_get_ver_ioctl(struct drm_device *dev, void *data,
+				    struct drm_file *file_priv);
+extern int exynos_g2d_set_cmdlist_ioctl(struct drm_device *dev, void *data,
+					struct drm_file *file_priv);
+extern int exynos_g2d_exec_ioctl(struct drm_device *dev, void *data,
+				 struct drm_file *file_priv);
+
+extern int g2d_open(struct drm_device *drm_dev, struct drm_file *file);
+extern void g2d_close(struct drm_device *drm_dev, struct drm_file *file);
+#else
+static inline int exynos_g2d_get_ver_ioctl(struct drm_device *dev, void *data,
+					   struct drm_file *file_priv)
+{
+	return -ENODEV;
+}
+
+static inline int exynos_g2d_set_cmdlist_ioctl(struct drm_device *dev,
+					       void *data,
+					       struct drm_file *file_priv)
+{
+	return -ENODEV;
+}
+
+static inline int exynos_g2d_exec_ioctl(struct drm_device *dev, void *data,
+					struct drm_file *file_priv)
+{
+	return -ENODEV;
+}
+
+<<<<<<< HEAD
+int g2d_open(struct drm_device *drm_dev, struct drm_file *file)
+=======
+static inline int g2d_open(struct drm_device *drm_dev, struct drm_file *file)
+>>>>>>> 122d1576a6713c615b6766b155a48c3edfd2f533
+{
+	return 0;
+}
+
+<<<<<<< HEAD
+void g2d_close(struct drm_device *drm_dev, struct drm_file *file)
+=======
+static inline void g2d_close(struct drm_device *drm_dev, struct drm_file *file)
+>>>>>>> 122d1576a6713c615b6766b155a48c3edfd2f533
+{ }
+#endif

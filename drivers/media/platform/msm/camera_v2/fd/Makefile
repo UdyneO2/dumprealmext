@@ -1,0 +1,12 @@
+# SPDX-License-Identifier: GPL-2.0-only
+<<<<<<< HEAD
+GCC_VERSION      := $(shell $(CONFIG_SHELL) $(srctree)/scripts/gcc-version.sh $(CROSS_COMPILE)gcc)
+=======
+>>>>>>> 122d1576a6713c615b6766b155a48c3edfd2f533
+ccflags-y += -Idrivers/media/video/msm
+ccflags-y += -Idrivers/media/platform/msm/camera_v2/common
+ccflags-y += -Idrivers/media/platform/msm/camera_v2
+ccflags-y += -Idrivers/media/platform/msm/camera_v2/pproc/cpp
+ccflags-y += -Idrivers/media/platform/msm/camera_v2/msm_buf_mgr/
+
+obj-$(CONFIG_MSM_FD) += msm_fd_dev.o msm_fd_hw.o

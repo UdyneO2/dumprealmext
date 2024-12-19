@@ -1,0 +1,16 @@
+config SCSI_BNX2X_FCOE
+	tristate "QLogic FCoE offload support"
+	depends on PCI
+	depends on (IPV6 || IPV6=n)
+	depends on LIBFC
+	depends on LIBFCOE
+<<<<<<< HEAD
+=======
+	depends on MMU
+>>>>>>> 122d1576a6713c615b6766b155a48c3edfd2f533
+	select NETDEVICES
+	select ETHERNET
+	select NET_VENDOR_BROADCOM
+	select CNIC
+	---help---
+	This driver supports FCoE offload for the QLogic devices.
